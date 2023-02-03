@@ -9,13 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet weak var mainLabel: UILabel!
-    
     
     @IBOutlet weak var computerImageView: UIImageView!
     @IBOutlet weak var userImageView: UIImageView!
-    
     
     @IBOutlet weak var computerLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
@@ -26,20 +23,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        computerImageView.image = #imageLiteral(resourceName: "ready")
-        userImageView.image = #imageLiteral(resourceName: "ready")
-        
-        computerLabel.text = "준비"
-        userLabel.text = "준비"
+        setBasicInfo()
     }
     
     
     @IBAction func rpsButtonTapped(_ sender: UIButton) {
-        guard let title = sender.currentTitle else {
-            return
-        }
         
+        guard let title = sender.currentTitle else { return }
+ 
         switch title {
         case "가위":
             userChoice = .scissors
@@ -55,33 +46,36 @@ class ViewController: UIViewController {
         }
     }
     
+    func handleSwitching(choice: Rps,viewElem: UIImageView, labelElem: UILabel) {
+        switch choice {
+        case .scissors:
+            viewElem.image = UIImage(named: "scissors.png")
+            labelElem.text = "가위"
+        case .rock:
+            viewElem.image = UIImage(named: "rock.png")
+            labelElem.text = "바위"
+        case .paper:
+            viewElem.image = UIImage(named: "paper.png")
+            labelElem.text = "보"
+        }
+    }
+    
+    func setBasicInfo(){
+        computerLabel.text = "준비"
+        computerImageView.image = #imageLiteral(resourceName: "ready")
+        userLabel.text = "준비"
+        userImageView.image = #imageLiteral(resourceName: "ready")
+        
+        mainLabel.text = "선택하세요"
+    }
+    
     @IBAction func selectButtonTapped(_ sender: UIButton) {
-        //handle userturn
-        switch userChoice {
-        case .scissors:
-            userImageView.image = UIImage(named: "scissors.png")
-            userLabel.text = "가위"
-        case .rock:
-            userImageView.image = UIImage(named: "rock.png")
-            userLabel.text = "바위"
-        case .paper:
-            userImageView.image = UIImage(named: "paper.png")
-            userLabel.text = "보"
-        }
+
+        handleSwitching(choice: userChoice, viewElem: userImageView, labelElem: userLabel)
         comChoice = Rps(rawValue: Int.random(in: 0...2))!
+
+        handleSwitching(choice: comChoice, viewElem: computerImageView, labelElem: computerLabel)
         
-        
-        switch comChoice {
-        case .scissors:
-            computerImageView.image = UIImage(named: "scissors.png")
-            computerLabel.text = "가위"
-        case .rock:
-            computerImageView.image = UIImage(named: "rock.png")
-            computerLabel.text = "바위"
-        case .paper:
-            computerImageView.image = UIImage(named: "paper.png")
-            computerLabel.text = "보"
-        }
         
         if userChoice == comChoice {
             mainLabel.text = "비겼다"
@@ -98,14 +92,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        computerLabel.text = "준비"
-        computerImageView.image = #imageLiteral(resourceName: "ready")
-        userLabel.text = "준비"
-        userImageView.image = #imageLiteral(resourceName: "ready")
-        
-        mainLabel.text = "선택하세요"
-        
+        setBasicInfo()
     }
-    
 }
 
