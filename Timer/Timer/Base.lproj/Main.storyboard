@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RDe-mX-lks">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RDe-mX-lks">
                                 <rect key="frame" x="10" y="189" width="373" height="208"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="타이머" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8A-wu-LAP">
-                                        <rect key="frame" x="0.0" y="0.0" width="52" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -56,6 +56,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="upL-BL-eMB">
                                                 <rect key="frame" x="53" y="0.0" width="267" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="AQ4-VK-d4t"/>
+                                                </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60초" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osX-mc-lxo">
                                                 <rect key="frame" x="328" y="0.0" width="45" height="30"/>
@@ -78,13 +81,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mCr-OW-6nK" secondAttribute="trailing" id="3nv-oD-0Hv"/>
-                                    <constraint firstItem="E1k-Q4-Bm2" firstAttribute="leading" secondItem="RDe-mX-lks" secondAttribute="leading" id="718-yi-nDY"/>
                                     <constraint firstItem="mCr-OW-6nK" firstAttribute="leading" secondItem="RDe-mX-lks" secondAttribute="leading" id="H0K-h5-yHl"/>
-                                    <constraint firstAttribute="trailing" secondItem="E1k-Q4-Bm2" secondAttribute="trailing" id="K7c-L7-c6L"/>
-                                    <constraint firstAttribute="trailing" secondItem="gkn-zO-g54" secondAttribute="trailing" id="Z9L-ab-Uyk"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ssb-f8-hz0" secondAttribute="trailing" id="rqs-Hq-rQf"/>
-                                    <constraint firstItem="Ssb-f8-hz0" firstAttribute="leading" secondItem="RDe-mX-lks" secondAttribute="leading" id="wOy-2A-1cx"/>
-                                    <constraint firstItem="gkn-zO-g54" firstAttribute="leading" secondItem="RDe-mX-lks" secondAttribute="leading" id="x9U-9H-gMr"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="F2v-Gb-dUN">
@@ -96,6 +93,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="RESET"/>
+                                        <connections>
+                                            <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KVF-V8-Esq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPR-6B-soJ">
                                         <rect key="frame" x="191" y="0.0" width="182" height="50"/>
@@ -103,6 +103,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="START"/>
+                                        <connections>
+                                            <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eke-WK-4fJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -121,6 +124,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F2v-Gb-dUN" secondAttribute="bottom" constant="30" id="y8e-1Z-hJ4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="gkn-zO-g54" id="D51-95-Bpu"/>
+                        <outlet property="slider" destination="upL-BL-eMB" id="gHj-rz-Tgo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
