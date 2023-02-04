@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var mainLabel: UILabel!
     var currentTime: Int = 30
-    var timer: Timer?
+    weak var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,20 +40,22 @@ class ViewController: UIViewController {
             return
         }
         timer?.invalidate()
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] _ in
-            self?.currentTime -= 1
-            let timeChanged = self?.currentTime ?? 0
-            self?.mainLabel.text = "\(timeChanged)초"
-            self?.slider.value = Float(timeChanged)/Float(60)
-            
-            if self?.currentTime == 0 {
-                self?.timer?.invalidate()
-                self?.configureFunc()
-                self?.mainLabel.text = "END"
-                AudioServicesPlayAlertSound(SystemSoundID(1322))
-            }
-        })
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(repeatingFunction), userInfo: nil, repeats: true)
     }
+    
+    @objc func repeatingFunction(){
+        currentTime -= 1
+        let timeChanged = currentTime
+        mainLabel.text = "\(timeChanged)초"
+        slider.value = Float(timeChanged)/Float(60)
+        
+        if currentTime == 0 {
+            timer?.invalidate()
+            configureFunc()
+            mainLabel.text = "END"
+            AudioServicesPlayAlertSound(SystemSoundID(1322))
+        }
+    }
+    
 }
 
