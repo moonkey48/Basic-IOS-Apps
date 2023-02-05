@@ -29,8 +29,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print(string)
-        return true
+        let lengthLimit = 10
+        if (textField.text?.count)! + string.count > lengthLimit {
+            return false
+        } else {
+            return true
+        }
     }
 
     @IBAction func doneButtonTapped(_ sender: UIButton) {
