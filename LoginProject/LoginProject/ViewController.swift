@@ -7,10 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     private let textViewHeight: CGFloat = 48
     
+    // MARK: - handle email view
     private lazy var emailTextFieldView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
         return tf
     }()
     
-    
+    // MARK: - handle password view
     private lazy var passwordTextFieldView: UIView  = {
         let view = UIView()
         view.frame.size.height = 40
@@ -86,6 +87,7 @@ class ViewController: UIViewController {
         return button
     }()
     
+    // MARK: - handle login button
     private let loginButton: UIButton  = {
         let button = UIButton(type: .custom)
         button.backgroundColor = .clear
@@ -109,6 +111,7 @@ class ViewController: UIViewController {
         return st
     }()
     
+    // MARK - handle password reset
     private let passwordResetButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .clear
@@ -118,6 +121,7 @@ class ViewController: UIViewController {
         return button
     }()
     
+    // MARK - constraint valiable
     lazy var emailInfoLabelCenterYConstraint = emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor)
     lazy var passwordInfoLabelCenterYConstraint = passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor)
     
