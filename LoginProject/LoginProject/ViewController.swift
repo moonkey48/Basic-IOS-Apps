@@ -81,6 +81,7 @@ class ViewController: UIViewController {
         button.setTitle("표시", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        button.addTarget(self, action: #selector(passwordSecureModeSetting), for: .touchUpInside)
         return button
     }()
     
@@ -111,6 +112,7 @@ class ViewController: UIViewController {
         button.backgroundColor = .clear
         button.setTitle("비밀번호 재설정", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -166,8 +168,26 @@ class ViewController: UIViewController {
             passwordResetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             passwordResetButton.heightAnchor.constraint(equalToConstant: textViewHeight),
         ])
-        
-        
     }
+    @objc func resetButtonTapped(){
+        //alert을 하려면 이걸로 하면됨
+        let alert  = UIAlertController(title: "비밀번호 바꾸기", message: "비밀번호를 바꾸시겠습니까?", preferredStyle: .actionSheet)
+        let success = UIAlertAction(title: "확인", style: .default) { action in
+            print("확인되었습니다.")
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel) { cancel in
+            print("취소되었습니다.")
+        }
+        //view 처럼 할당해야 함
+        alert.addAction(success)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func passwordSecureModeSetting(){
+        passwordTextField.isSecureTextEntry.toggle()
+    }
+    
+    
 }
 
