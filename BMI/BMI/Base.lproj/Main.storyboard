@@ -84,7 +84,7 @@
                                 <state key="normal" title="BMI 계산하기"/>
                                 <connections>
                                     <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cmw-mC-125"/>
-                                    <segue destination="iiV-Sz-Uft" kind="presentation" id="8RN-Uk-Tvh"/>
+                                    <segue destination="iiV-Sz-Uft" kind="presentation" identifier="toSecondVC" id="8RN-Uk-Tvh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -175,7 +175,7 @@
                     <connections>
                         <outlet property="adiviceLabel" destination="DUc-qu-aub" id="IMw-h3-u9R"/>
                         <outlet property="backButton" destination="gUR-9t-lij" id="MPB-gr-jvQ"/>
-                        <outlet property="bmiumberLabel" destination="fm8-tF-Hk8" id="Tyw-Xl-4Nz"/>
+                        <outlet property="bmiNumberLabel" destination="fm8-tF-Hk8" id="3k3-Gh-0Gf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hF-Sc-WLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
