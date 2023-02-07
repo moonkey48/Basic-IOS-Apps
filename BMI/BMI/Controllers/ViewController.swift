@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var calculateButton: UIButton!
     
-    var bmi: Double?
+    var bmiManager = BMICaculaterManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
-        bmi = calculateBMI(weight:  weightTextField.text!, height: heightTextField.text!)
+//        bmiManager.calculateBMI(weight:  weightTextField.text!, height: heightTextField.text!)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -52,56 +52,13 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSecondVC" {
             let secondVC = segue.destination as! SecondViewController
-            secondVC.bmiNumber = self.bmi
-            secondVC.bmiColor = getBackgroundColor()
-            secondVC.bmiString = getBMIAdviceString()
+            secondVC.bmi = bmiManager.getBMIResult(weight: weightTextField.text!, height: heightTextField.text!)
         }
         heightTextField.text = ""
         weightTextField.text = ""
     }
     
-    func calculateBMI(weight: String, height: String) -> Double {
-        guard let w = Double(weight), let h = Double(height) else { return 0.0 }
-        var bmi = w / (h * h) * 10000
-        bmi = round(bmi * 10) / 10
-        return bmi
-    }
     
-    func getBackgroundColor() -> UIColor {
-        guard let bmi = bmi else { return UIColor.black }
-        switch bmi {
-        case ..<18.6:
-            return .brown
-        case 18.6..<23.0:
-            return .cyan
-        case 23.0..<25.0:
-            return .gray
-        case 25.0..<30.0:
-            return .orange
-        case 30.0...:
-            return .red
-        default:
-            return .black
-        }
-    }
-    
-    func getBMIAdviceString() -> String {
-        guard let bmi = bmi else { return "" }
-        switch bmi {
-        case ..<18.6:
-            return "저체중"
-        case 18.6..<23.0:
-            return "표준"
-        case 23.0..<25.0:
-            return "과체중"
-        case 25.0..<30.0:
-            return "중도비만"
-        case 30.0...:
-            return "고도비만"
-        default:
-            return ""
-        }
-    }
 }
 
 extension ViewController: UITextFieldDelegate {

@@ -14,9 +14,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var adiviceLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
-    var bmiNumber: Double?
-    var bmiString: String?
-    var bmiColor: UIColor?
+    var bmi: BMI?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +25,11 @@ class SecondViewController: UIViewController {
         backButton.layer.cornerRadius = 5
         
         
-        guard let bmiNumber = bmiNumber else {return}
-        bmiNumberLabel.text = String(bmiNumber)
+        guard let bmi = bmi else {return}
         
-        //어차피 optional이라 guard가 필요 없다.
-        adiviceLabel.text = bmiString
-        bmiNumberLabel.backgroundColor = bmiColor
+        bmiNumberLabel.text = String(bmi.value)
+        adiviceLabel.text = bmi.advice
+        bmiNumberLabel.backgroundColor = bmi.matchColor
     }
     
     
