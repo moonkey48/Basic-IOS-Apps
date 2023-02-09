@@ -9,7 +9,7 @@ import UIKit
 
 struct BMICaculaterManager {
     
-    var bmi: BMI?
+    private var bmi: BMI?
     
     mutating func getBMIResult(weight: String, height: String) -> BMI{
         
