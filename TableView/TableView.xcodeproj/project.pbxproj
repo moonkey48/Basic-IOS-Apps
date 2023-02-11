@@ -14,6 +14,7 @@
 		DD8228C829950B7F0095E07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8228C729950B7F0095E07F /* Assets.xcassets */; };
 		DD8228CB29950B7F0095E07F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8228C929950B7F0095E07F /* LaunchScreen.storyboard */; };
 		DD8228D329951F060095E07F /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8228D229951F060095E07F /* MovieCell.swift */; };
+		DD8228D829963E6B0095E07F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8228D729963E6B0095E07F /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DD8228CA29950B7F0095E07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD8228CC29950B7F0095E07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD8228D229951F060095E07F /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		DD8228D729963E6B0095E07F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		DD8228D429963C980095E07F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DD8228D729963E6B0095E07F /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD8228D829963E6B0095E07F /* Movie.swift in Sources */,
 				DD8228C329950B7D0095E07F /* ViewController.swift in Sources */,
 				DD8228BF29950B7D0095E07F /* AppDelegate.swift in Sources */,
 				DD8228D329951F060095E07F /* MovieCell.swift in Sources */,
