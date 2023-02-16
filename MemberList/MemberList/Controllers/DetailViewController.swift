@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 class DetailViewController: UIViewController {
     
@@ -17,17 +18,41 @@ class DetailViewController: UIViewController {
     override func loadView() {
         view = detailView
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
         setupButtonAction()
+        setupTapGestures()
     }
+    
+    
     private func setupData(){
         detailView.member = member
     }
     func setupButtonAction(){
         detailView.saveButton.addTarget(self, action: #selector(saveButtonTapped) , for: .touchUpInside)
     }
+    func setupImagePicker(){
+        var configuration = PHPickerConfiguration()
+        configuration.selectionLimit = 0
+        configuration.filter = .any(of: [.images, .videos])
+        
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
+    }
+    func setupTapGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchUpImageView))
+        detailView.mainImageView.addGestureRecognizer(tapGesture)
+        detailView.mainImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func touchUpImageView() {
+        print("이미지뷰 터치")
+        setupImagePicker()
+    }
+    
     @objc func saveButtonTapped(){
         print("updated button tapped")
         // [1] 멤버가 없다면 (새로운 멤버를 추가하는 화면)
@@ -83,5 +108,22 @@ class DetailViewController: UIViewController {
         
         // (일처리를 다한 후에) 전화면으로 돌아가기
         self.navigationController?.popViewController(animated: true)
+    }
+}
+extension DetailViewController : PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        
+        let itemProvider = results.first?.itemProvider
+        
+        if let itemProvider =  itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self){
+            itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
+                DispatchQueue.main.async {
+                    self.detailView.mainImageView.image = image as? UIImage
+                }
+            }
+        } else {
+            print("can't get image")
+        }
     }
 }
