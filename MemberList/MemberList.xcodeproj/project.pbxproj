@@ -15,6 +15,7 @@
 		DDCCA043299B6BBB00AD1D96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCCA041299B6BBB00AD1D96 /* LaunchScreen.storyboard */; };
 		DDCCA04E299B73D700AD1D96 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCCA04D299B73D700AD1D96 /* Member.swift */; };
 		DDCCA051299B79D800AD1D96 /* MemberListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCCA050299B79D800AD1D96 /* MemberListManager.swift */; };
+		DDCCA053299DE40100AD1D96 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCCA052299DE40100AD1D96 /* MyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DDCCA044299B6BBB00AD1D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDCCA04D299B73D700AD1D96 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		DDCCA050299B79D800AD1D96 /* MemberListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListManager.swift; sourceTree = "<group>"; };
+		DDCCA052299DE40100AD1D96 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				DDCCA03C299B6BB900AD1D96 /* Main.storyboard */,
+				DDCCA052299DE40100AD1D96 /* MyTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				DDCCA037299B6BB900AD1D96 /* AppDelegate.swift in Sources */,
 				DDCCA039299B6BB900AD1D96 /* SceneDelegate.swift in Sources */,
 				DDCCA04E299B73D700AD1D96 /* Member.swift in Sources */,
+				DDCCA053299DE40100AD1D96 /* MyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

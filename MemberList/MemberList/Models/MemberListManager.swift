@@ -23,4 +23,13 @@ final class MemberListManager {
             Member(name: "홍길동", age: 36, phone: "010-1234-5678", address: "서울"),
         ]
     }
+    func getMemberList() -> [Member] {
+        return memberList
+    }
+    func makeMember(_ member: Member) {
+        memberList.append(member)
+    }
+    func updateMember(index: Int, _ member: Member){
+        memberList[index] = member
+    }
 }
