@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     }
     func setupTableView(){
         tableView.dataSource = self
+        tableView.delegate = self
         
         tableView.rowHeight = 60
         
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .white
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = .systemBlue
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
@@ -69,3 +70,11 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DetailViewController()
+        detailVC.member = memberListManager.getMemberList()[indexPath.row]
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
