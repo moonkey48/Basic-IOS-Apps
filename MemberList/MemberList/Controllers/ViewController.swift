@@ -62,10 +62,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath) as! MyTableViewCell
         
-        var memberInfo = memberListManager.getMemberList()[indexPath.row]
-        cell.mainImageView.image = memberInfo.memberImage
-        cell.memberNameLabel.text = memberInfo.name
-        cell.memberAddresssLabel.text = memberInfo.address
+        cell.member = memberListManager.getMemberList()[indexPath.row]
         cell.selectionStyle = .none
         
         return cell
