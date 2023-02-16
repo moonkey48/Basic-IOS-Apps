@@ -11,6 +11,12 @@ class ViewController: UIViewController {
     
     private var tableView = UITableView()
     var memberListManager = MemberListManager()
+    
+    lazy var plusButton: UIBarButtonItem  = {
+        var button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
+        
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +25,11 @@ class ViewController: UIViewController {
         setupNaviBar()
         setupTableView()
         setupTableViewConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     func setupTableView(){
         tableView.dataSource = self
@@ -53,6 +64,12 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
+        self.navigationItem.rightBarButtonItem = self.plusButton
+    }
+    
+    @objc func plusButtonTapped(){
+        let detailVC = DetailViewController()
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 

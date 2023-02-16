@@ -26,10 +26,10 @@ final class MemberListManager {
     func getMemberList() -> [Member] {
         return memberList
     }
-    func makeMember(_ member: Member) {
+    func makeNewMember(_ member: Member) {
         memberList.append(member)
     }
-    func updateMember(index: Int, _ member: Member){
+    func updateMemberInfo(index: Int, _ member: Member){
         memberList[index] = member
     }
 }
