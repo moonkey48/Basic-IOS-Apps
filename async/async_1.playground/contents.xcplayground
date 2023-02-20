@@ -4,5 +4,6 @@
         <page name='DispatchQueue'/>
         <page name='Queue'/>
         <page name='CallbackFunction'/>
+        <page name='ConcurrencyProblems'/>
     </pages>
 </playground>
