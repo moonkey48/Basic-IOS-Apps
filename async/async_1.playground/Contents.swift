@@ -26,18 +26,41 @@ func task5(){
     print("task5 end 🏁")
 }
 
-DispatchQueue.global().async {
+//DispatchQueue.global().async {
+//    task1()
+//}
+//DispatchQueue.global().async {
+//    task2()
+//}
+//DispatchQueue.global().async {
+//    task3()
+//}
+//DispatchQueue.global().async {
+//    task4()
+//}
+//DispatchQueue.global().async {
+//    task5()
+//}
+
+let serialQueue = DispatchQueue(label: "serial")
+//serialQueue.async {
+//    task1()
+//}
+//serialQueue.async {
+//    task2()
+//}
+//serialQueue.async {
+//    task3()
+//}
+
+let concurrentQueue = DispatchQueue.global()
+
+concurrentQueue.async {
     task1()
 }
-DispatchQueue.global().async {
+concurrentQueue.async {
     task2()
 }
-DispatchQueue.global().async {
+concurrentQueue.async {
     task3()
-}
-DispatchQueue.global().async {
-    task4()
-}
-DispatchQueue.global().async {
-    task5()
 }
