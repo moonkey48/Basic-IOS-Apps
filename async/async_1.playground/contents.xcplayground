@@ -2,6 +2,7 @@
 <playground version='6.0' target-platform='ios' display-mode='rendered' buildActiveScheme='true'>
     <pages>
         <page name='DispatchQueue'/>
-        <page name='Untitled Page'/>
+        <page name='Queue'/>
+        <page name='CallbackFunction'/>
     </pages>
 </playground>
