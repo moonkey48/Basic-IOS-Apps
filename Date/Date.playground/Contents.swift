@@ -18,3 +18,39 @@ enum Weekday: Int {
 }
 Weekday.today
 
+
+let formatter = DateFormatter()
+
+//formatter.dateStyle = .full
+//formatter.timeStyle = .full
+formatter.locale = Locale(identifier: "ko_KR")
+formatter.timeZone = TimeZone.current
+formatter.dateFormat = "yyyy년 MM월 dd일 (E) hh시 mm분 ss초"
+
+let str = formatter.string(from: Date())
+
+
+struct InstagramPost {
+    let title = "title"
+    let description = "my first post"
+
+    private let date = Date()
+    
+    var dateString: String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.timeZone = TimeZone.current
+        formatter.dateStyle = .full
+        formatter.timeStyle = .medium
+        
+        return formatter.string(from: date)
+    }
+}
+let post = InstagramPost()
+print(post.dateString)
+
+let post2 = InstagramPost()
+print(post2.dateString)
+
+
+
