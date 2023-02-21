@@ -49,8 +49,10 @@ struct InstagramPost {
 let post = InstagramPost()
 print(post.dateString)
 
-let post2 = InstagramPost()
-print(post2.dateString)
+
+let calender = Calendar.current
+
+print(calender.component(.weekday, from: Date()))
 
 
 
