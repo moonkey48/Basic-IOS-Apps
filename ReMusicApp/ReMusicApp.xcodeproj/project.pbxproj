@@ -15,6 +15,8 @@
 		DD11B33029AB926A00E6BF6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD11B32E29AB926A00E6BF6B /* LaunchScreen.storyboard */; };
 		DD11B33E29AB95F900E6BF6B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11B33D29AB95F900E6BF6B /* Constants.swift */; };
 		DD11B34029AB979400E6BF6B /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11B33F29AB979400E6BF6B /* Music.swift */; };
+		DD11B34329AB9BD100E6BF6B /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11B34229AB9BD100E6BF6B /* NetworkingManager.swift */; };
+		DD11B34529AB9EA100E6BF6B /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11B34429AB9EA100E6BF6B /* SearchResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		DD11B33129AB926A00E6BF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD11B33D29AB95F900E6BF6B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DD11B33F29AB979400E6BF6B /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		DD11B34229AB9BD100E6BF6B /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		DD11B34429AB9EA100E6BF6B /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +64,10 @@
 		DD11B32229AB926800E6BF6B /* ReMusicApp */ = {
 			isa = PBXGroup;
 			children = (
-				DD11B33C29AB95C500E6BF6B /* Helpers */,
 				DD11B32329AB926800E6BF6B /* AppDelegate.swift */,
 				DD11B32529AB926800E6BF6B /* SceneDelegate.swift */,
+				DD11B34129AB9BBC00E6BF6B /* Networking */,
+				DD11B33C29AB95C500E6BF6B /* Helpers */,
 				DD11B33929AB938F00E6BF6B /* Controllers */,
 				DD11B33829AB938800E6BF6B /* Views */,
 				DD11B33729AB937E00E6BF6B /* Models */,
@@ -93,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				DD11B32729AB926800E6BF6B /* ViewController.swift */,
+				DD11B34429AB9EA100E6BF6B /* SearchResultViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -103,6 +109,14 @@
 				DD11B33D29AB95F900E6BF6B /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DD11B34129AB9BBC00E6BF6B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DD11B34229AB9BD100E6BF6B /* NetworkingManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,8 +191,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD11B32829AB926800E6BF6B /* ViewController.swift in Sources */,
+				DD11B34529AB9EA100E6BF6B /* SearchResultViewController.swift in Sources */,
 				DD11B32429AB926800E6BF6B /* AppDelegate.swift in Sources */,
 				DD11B34029AB979400E6BF6B /* Music.swift in Sources */,
+				DD11B34329AB9BD100E6BF6B /* NetworkingManager.swift in Sources */,
 				DD11B32629AB926800E6BF6B /* SceneDelegate.swift in Sources */,
 				DD11B33E29AB95F900E6BF6B /* Constants.swift in Sources */,
 			);
