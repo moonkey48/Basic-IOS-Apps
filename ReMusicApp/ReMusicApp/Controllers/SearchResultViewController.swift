@@ -8,22 +8,48 @@
 import UIKit
 
 class SearchResultViewController: UIViewController {
-
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    let flowLayout = UICollectionViewFlowLayout()
+    let networkManager = NetworkManager.shared
+    
+    var musicArray: [Music] = []
+    
+    var searchString: String? {
+        didSet{
+            loadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupCollectionView()
+    }
+    func setupCollectionView(){
+        collectionView.dataSource = self
+        collectionView.backgroundColor  = .white
+        flowLayout.scrollDirection = .vertical
+        
+        let collectionCellWidth = (UIScreen.main.bounds.width - CVCell.spacingWidth * (CVCell.cellColumn - 1)) / CVCell.cellColumn
+        flowLayout.itemSize = CGSize(width: collectionCellWidth, height: collectionCellWidth)
+        flowLayout.minimumLineSpacing = CVCell.spacingWidth
+        flowLayout.minimumInteritemSpacing = CVCell.spacingWidth
+        
+        collectionView.collectionViewLayout = flowLayout
+        
+    }
+    private func loadData(){
+        
+    }
+}
+extension SearchResultViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return musicArray.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.musicCollectionViewCellIdentifier, for: indexPath) as! Music
+        
     }
-    */
-
 }
