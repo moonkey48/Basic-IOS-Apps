@@ -17,9 +17,17 @@ extension MemoData {
     }
 
     @NSManaged public var memoText: String?
-    @NSManaged public var data: Date?
+    @NSManaged public var date: Date?
     @NSManaged public var color: Int64
 
+    var dateString: String? {
+        let dateFormmater = DateFormatter()
+        dateFormmater.dateFormat = "yyyy-MM-dd"
+        guard let date = self.date else { return ""}
+        let savedDateString = dateFormmater.string(from: date)
+        
+        return savedDateString
+    }
 }
 
 extension MemoData : Identifiable {

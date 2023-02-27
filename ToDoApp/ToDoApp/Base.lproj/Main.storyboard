@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="131" id="5Qz-PL-gML">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="131" id="5Qz-PL-gML" customClass="ToDoCell" customModule="ToDoApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="131"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Qz-PL-gML" id="ZVu-fb-Rz9">
@@ -58,6 +58,9 @@
                                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                             <state key="normal" title="update" image="pencil" catalog="system"/>
+                                                                            <connections>
+                                                                                <action selector="updateButtonTapped:" destination="5Qz-PL-gML" eventType="touchUpInside" id="1Vo-yI-KhQ"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <constraints>
@@ -91,6 +94,12 @@
                                                 <constraint firstItem="JYv-4K-AJ8" firstAttribute="bottom" secondItem="ZVu-fb-Rz9" secondAttribute="bottomMargin" id="UCJ-su-8IA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellBackgroundView" destination="JYv-4K-AJ8" id="KMB-Sq-iDa"/>
+                                            <outlet property="dateTextLabel" destination="2UE-el-fp4" id="Cep-RF-Rn8"/>
+                                            <outlet property="toDoTextLabel" destination="HDS-Od-D5M" id="zAy-OJ-lUQ"/>
+                                            <outlet property="updateButton" destination="uYx-Or-QQP" id="dJS-PA-ZFy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -105,10 +114,30 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g3H-s7-lvE"/>
+                    <connections>
+                        <outlet property="tableView" destination="7dX-lZ-tKJ" id="6gB-bM-Rc6"/>
+                        <segue destination="cad-Ck-jiL" kind="show" identifier="ToDoCell" id="zs1-de-sSE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028.2442748091603" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1031" y="4"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1n5-HM-Ygj">
+            <objects>
+                <viewController id="cad-Ck-jiL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bom-ri-jIL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KXO-Mr-Jra"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Ql-y8-8AG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hcc-gh-xdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1972" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9PC-td-dY9">
