@@ -49,7 +49,7 @@ final class MusicCell: UITableViewCell {
         DispatchQueue.global().async {
         
             guard let data = try? Data(contentsOf: url) else { return }
-            // 오래걸리는 작업이 일어나고 있는 동안에 url이 바뀔 가능성 제거 ⭐️⭐️⭐️
+            // 오래걸리는 작업이 일어나고 있는 동안에 url이 바뀔 가능성 제거 ⭐️.⭐️⭐️
             guard urlString == url.absoluteString else { return }
             
             DispatchQueue.main.async {
