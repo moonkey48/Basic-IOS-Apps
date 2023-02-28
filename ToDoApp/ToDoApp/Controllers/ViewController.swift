@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
+        setupTableView()
     }
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
     }
     func setupTableView(){
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.separatorStyle = .none
     }
     
@@ -42,6 +44,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memoManager.getMemoListFromCoreData().count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

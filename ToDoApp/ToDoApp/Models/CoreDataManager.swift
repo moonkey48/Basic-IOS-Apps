@@ -34,7 +34,7 @@ final class CoreDataManager {
             //요청서
             let request = NSFetchRequest<NSManagedObject>(entityName: modelName)
             //정렬 순서를 정해서 요청ㅅ에 넘겨주기
-            let dataOrder = NSSortDescriptor(key: "data", ascending: false)
+            let dataOrder = NSSortDescriptor(key: "date", ascending: false)
             request.sortDescriptors = [dataOrder]
             
             do {
