@@ -10,6 +10,7 @@
 		DD6E1BF529AC669E009FAF01 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E1BF429AC669E009FAF01 /* ToDoCell.swift */; };
 		DD6E1BF729ACE22F009FAF01 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E1BF629ACE22F009FAF01 /* Color.swift */; };
 		DD6E1BF929ACEBE4009FAF01 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E1BF829ACEBE4009FAF01 /* CoreDataManager.swift */; };
+		DD6E1BFB29AD8A86009FAF01 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E1BFA29AD8A86009FAF01 /* DetailViewController.swift */; };
 		DD7069B829AC510600AD7E06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7069B729AC510600AD7E06 /* AppDelegate.swift */; };
 		DD7069BA29AC510600AD7E06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7069B929AC510600AD7E06 /* SceneDelegate.swift */; };
 		DD7069BC29AC510600AD7E06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7069BB29AC510600AD7E06 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		DD6E1BF429AC669E009FAF01 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		DD6E1BF629ACE22F009FAF01 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DD6E1BF829ACEBE4009FAF01 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		DD6E1BFA29AD8A86009FAF01 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DD7069B429AC510600AD7E06 /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7069B729AC510600AD7E06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD7069B929AC510600AD7E06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				DD7069BB29AC510600AD7E06 /* ViewController.swift */,
+				DD6E1BFA29AD8A86009FAF01 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				DD7069D129AC539700AD7E06 /* MemoData+CoreDataProperties.swift in Sources */,
 				DD6E1BF729ACE22F009FAF01 /* Color.swift in Sources */,
 				DD6E1BF929ACEBE4009FAF01 /* CoreDataManager.swift in Sources */,
+				DD6E1BFB29AD8A86009FAF01 /* DetailViewController.swift in Sources */,
 				DD7069BA29AC510600AD7E06 /* SceneDelegate.swift in Sources */,
 				DD7069C229AC510600AD7E06 /* ToDoApp.xcdatamodeld in Sources */,
 			);

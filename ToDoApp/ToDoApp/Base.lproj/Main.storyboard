@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -123,21 +124,117 @@
             </objects>
             <point key="canvasLocation" x="1031" y="4"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="1n5-HM-Ygj">
             <objects>
-                <viewController id="cad-Ck-jiL" sceneMemberID="viewController">
+                <viewController id="cad-Ck-jiL" customClass="DetailViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bom-ri-jIL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="0ze-jW-yb5">
+                                <rect key="frame" x="25" y="175" width="343" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoM-TO-iPO">
+                                        <rect key="frame" x="0.0" y="0.0" width="81.333333333333329" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Red"/>
+                                        <connections>
+                                            <action selector="colorButtonTapped:" destination="cad-Ck-jiL" eventType="touchUpInside" id="XQp-5B-UlJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXS-vd-YZ0">
+                                        <rect key="frame" x="87.333333333333343" y="0.0" width="81.333333333333343" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Green"/>
+                                        <connections>
+                                            <action selector="colorButtonTapped:" destination="cad-Ck-jiL" eventType="touchUpInside" id="Mvd-wY-Ycz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3w5-f1-h1Z">
+                                        <rect key="frame" x="174.66666666666666" y="0.0" width="81" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Blue"/>
+                                        <connections>
+                                            <action selector="colorButtonTapped:" destination="cad-Ck-jiL" eventType="touchUpInside" id="Bvf-Ua-RBK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBf-vr-2ip">
+                                        <rect key="frame" x="261.66666666666669" y="0.0" width="81.333333333333314" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Purple"/>
+                                        <connections>
+                                            <action selector="colorButtonTapped:" destination="cad-Ck-jiL" eventType="touchUpInside" id="pMp-lr-9gT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="esM-Lp-pzy"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dus-Gp-kFo">
+                                <rect key="frame" x="25" y="250" width="343" height="200"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X8H-ZF-M44">
+                                        <rect key="frame" x="10" y="10" width="323" height="180"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="X8H-ZF-M44" secondAttribute="bottom" constant="10" id="2cx-v6-aZ0"/>
+                                    <constraint firstAttribute="trailing" secondItem="X8H-ZF-M44" secondAttribute="trailing" constant="10" id="GZi-NL-4BN"/>
+                                    <constraint firstItem="X8H-ZF-M44" firstAttribute="leading" secondItem="Dus-Gp-kFo" secondAttribute="leading" constant="10" id="Gae-eY-2FO"/>
+                                    <constraint firstAttribute="height" constant="200" id="jy5-Gn-8JE"/>
+                                    <constraint firstItem="X8H-ZF-M44" firstAttribute="top" secondItem="Dus-Gp-kFo" secondAttribute="top" constant="10" id="l0B-B4-XEz"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhN-52-RdZ">
+                                <rect key="frame" x="25" y="490" width="343" height="40"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="i3M-ga-Iea"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="cad-Ck-jiL" eventType="touchUpInside" id="oZj-40-5dT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KXO-Mr-Jra"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KXO-Mr-Jra" firstAttribute="trailing" secondItem="0ze-jW-yb5" secondAttribute="trailing" constant="25" id="5UJ-C4-kn4"/>
+                            <constraint firstItem="0ze-jW-yb5" firstAttribute="leading" secondItem="KXO-Mr-Jra" secondAttribute="leading" constant="25" id="8k5-Ya-H1e"/>
+                            <constraint firstItem="Dus-Gp-kFo" firstAttribute="leading" secondItem="KXO-Mr-Jra" secondAttribute="leading" constant="25" id="HlI-va-Aii"/>
+                            <constraint firstItem="bhN-52-RdZ" firstAttribute="leading" secondItem="KXO-Mr-Jra" secondAttribute="leading" constant="25" id="I9r-HM-EjZ"/>
+                            <constraint firstItem="Dus-Gp-kFo" firstAttribute="top" secondItem="0ze-jW-yb5" secondAttribute="bottom" constant="40" id="IhO-g5-cfi"/>
+                            <constraint firstItem="KXO-Mr-Jra" firstAttribute="trailing" secondItem="bhN-52-RdZ" secondAttribute="trailing" constant="25" id="W6Z-VA-t61"/>
+                            <constraint firstItem="bhN-52-RdZ" firstAttribute="top" secondItem="Dus-Gp-kFo" secondAttribute="bottom" constant="40" id="cbS-Ks-FRE"/>
+                            <constraint firstItem="0ze-jW-yb5" firstAttribute="top" secondItem="KXO-Mr-Jra" secondAttribute="top" constant="20" id="fX6-nb-btd"/>
+                            <constraint firstItem="KXO-Mr-Jra" firstAttribute="trailing" secondItem="Dus-Gp-kFo" secondAttribute="trailing" constant="25" id="v2S-XJ-g0J"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1Ql-y8-8AG"/>
+                    <connections>
+                        <outlet property="blueButton" destination="3w5-f1-h1Z" id="yd2-N6-alf"/>
+                        <outlet property="greenButton" destination="SXS-vd-YZ0" id="LCM-rr-3d4"/>
+                        <outlet property="purpleButton" destination="dBf-vr-2ip" id="dFU-9c-VPt"/>
+                        <outlet property="redButton" destination="aoM-TO-iPO" id="BZt-Yj-rTX"/>
+                        <outlet property="saveButton" destination="bhN-52-RdZ" id="V3t-yx-SiV"/>
+                        <outlet property="textBackgroundView" destination="Dus-Gp-kFo" id="9St-VD-vKS"/>
+                        <outlet property="textView" destination="X8H-ZF-M44" id="AuH-ku-teB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hcc-gh-xdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1972" y="4"/>
+            <point key="canvasLocation" x="1971.7557251908397" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9PC-td-dY9">
@@ -162,6 +259,12 @@
     </scenes>
     <resources>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
